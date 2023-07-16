@@ -28,7 +28,7 @@
       </nav>
     <div class="container">
     <h1 class="text-center , my-4">Add a Note</h1> 
-    <form>
+    <div>
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" id="title" aria-describedby="titleHelp">
@@ -38,8 +38,8 @@
         <label for="desc" class="form-label">Description</label>
         <textarea type="text" class="form-control" id="desc"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+      <button id = "submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
     
     <h1 class="text-center , my-4">Your Notes</h1>
     <div class="mynotes row">
@@ -88,14 +88,22 @@ async function postData(url = "", data = {}) {
 }
 
         //fetch all the notes
-        const user = JSON.parse(localStorage,getItem('user'))
-        if(!user.token){
-          window.href = "/login"
-        }
-        const notes = postData('/getnotes',{token: user.token})
-        notes.then((notes) =>{
-          console.log("Notes")
-          //populate the notes
+        const user = JSON.parse(localStorage.getItem('user'))
+        //todo
+        // if(!user || !user.token){
+        //   window.location = "/login"
+        // }
+        // const notes = postData('/getnotes',{token: user.token})
+        // notes.then((notes) =>{
+        //   console.log("Notes")
+        //   //populate the notes
+        // })
+        //add a click listner for submit
+        let submit = document.getElementById("submit")
+        submit.adddEventListener("click" , ()=>{
+          let title = document.getElementById("title")
+          let desc = document.getElementById("desc")
+          console.log("Submitting this data" , title , desc)
         })
     </script>
   </body>
