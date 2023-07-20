@@ -100,9 +100,9 @@ async function postData(url = "", data = {}) {
         // })
         //add a click listner for submit
         let submit = document.getElementById("submit")
-        submit.adddEventListener("click" , ()=>{
-          let title = document.getElementById("title")
-          let desc = document.getElementById("desc")
+        submit.addEventListener("click" , ()=>{
+          let title = document.getElementById("title").value
+          let desc = document.getElementById("desc").value
           console.log("Submitting this data" , title , desc)
         })
     </script>
