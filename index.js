@@ -18,7 +18,7 @@ app.use(express.json({ extender: true }))
 app.use(express.urlencoded({ extender: true }))
 const port = 3000
 
-mongoose.connect('mongodb+srv://adhiraj:adhiraj@cluster0.hwtpz3k.mongodb.net/', {
+mongoose.connect(`mongodb://user:Kushagrayadav1371@ac-1agpynz-shard-00-00.isayqdh.mongodb.net:27017,ac-1agpynz-shard-00-01.isayqdh.mongodb.net:27017,ac-1agpynz-shard-00-02.isayqdh.mongodb.net:27017/?ssl=true&replicaSet=atlas-arqn8y-shard-0&authSource=admin&retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
